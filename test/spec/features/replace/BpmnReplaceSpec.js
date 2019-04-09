@@ -298,6 +298,7 @@ describe('features/replace - bpmn replace', function() {
       // then
       expect(isExpanded(newShape)).to.be.false; // collapsed
       expect(newShape.children).to.be.empty;
+      expect(newShape.height).to.equal(60);
     }));
 
 
@@ -312,6 +313,9 @@ describe('features/replace - bpmn replace', function() {
       // then
       expect(isExpanded(newShape)).to.be.true; // expanded
       expect(newShape.children).to.be.empty;
+      // TODO: Assert against default height if there is one, not previous height
+      // See behavior for sub processes above
+      expect(newShape.height).to.equal(shape.height);
     }));
 
   });
